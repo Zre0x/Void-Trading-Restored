@@ -1,0 +1,20 @@
+def generatedSources = layout.buildDirectory.dir('generated/sources/voidtrading')
+
+def generateCommonSources = tasks.register('generateCommonSources', Sync) {
+    inputs.property('villagerPackage', project.villagerPackage)
+    from(rootProject.file('../common')) {
+        include '*.java'
+        into 'dev/voidtrading/mixin'
+        filter { line -> line.replace('@VILLAGER_PACKAGE@', project.villagerPackage) }
+    }
+    into generatedSources
+}
+
+sourceSets.main.java.setSrcDirs([generatedSources])
+tasks.named('compileJava') {
+    dependsOn generateCommonSources
+}
+
+tasks.named('processResources') {
+    from(rootProject.file('../LICENSE'))
+}

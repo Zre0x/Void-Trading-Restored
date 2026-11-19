@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.voidtrading.mixin",
+  "mixins": [
+    "AbstractVillagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

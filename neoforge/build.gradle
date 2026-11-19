@@ -1,0 +1,10 @@
+plugins { id 'java'; id 'net.neoforged.moddev' version '2.0.148' }
+
+version = '1.0.1'
+group = 'dev.voidtrading'
+base.archivesName = 'void-trading-restored-neoforge-26.3'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+neoForge { version = '26.3.0.113' }
+ext.villagerPackage = 'net.minecraft.world.entity.npc.villager'
+apply from: '../common.gradle'

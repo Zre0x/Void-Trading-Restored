@@ -1,0 +1,14 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.17.21' }
+
+version = '1.0.1'
+group = 'dev.voidtrading'
+base.archivesName = 'void-trading-restored-fabric-26.3'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+repositories { mavenCentral() }
+dependencies {
+minecraft 'com.mojang:minecraft:26.3'
+implementation 'net.fabricmc:fabric-loader:0.19.5'
+}
+ext.villagerPackage = 'net.minecraft.world.entity.npc.villager'
+apply from: '../common.gradle'

@@ -1,0 +1,13 @@
+license="MIT"
+[[mixins]]
+config="voidtrading.mixins.json"
+[[mods]]
+modId="voidtrading"
+version="1.0.1"
+displayName="Void Trading Restored"
+[[dependencies.voidtrading]]
+modId="minecraft"
+type="required"
+versionRange="[26.3]"
+ordering="NONE"
+side="BOTH"
